@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Extensions Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Noto Sans', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(170deg, #040918 0%, #091540 100%);
+      color: white;
+      padding: 2rem;
+    }
+
+    h2 {
+      color: rgb(197, 215, 230);
+    }
+
+    .header {
+      background-color: hsl(225, 23%, 24%);
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .header img {
+      height: 28px;
+    }
+
+    .filters {
+      max-width: 1200px;
+      margin: 2rem auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .filter-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .filter-buttons button {
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: none;
+      background-color: hsl(225, 23%, 24%);
+      color: rgb(197, 215, 230);
+      cursor: pointer;
+    }
+
+    .filter-buttons .active {
+      background-color: hsl(3, 86%, 64%);
+      color: white;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 1.2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: hsl(225, 23%, 24%);
+      border-radius: 12px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .card-icon img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .card-body h3 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-body p {
+      font-size: 0.9rem;
+      color: hsl(226, 11%, 70%);
+    }
+
+    .card-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .remove {
+      background: #040918;
+      color: white;
+      border: 1px solid white;
+      border-radius: 8px;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+
+    .header {display: flex;
+    justify-content: space-between;}
+
+    .img2 img{border-radius: 8px;
+    border: solid 1px white;
+    cursor: pointer;
+
+}
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 34px;
+      height: 20px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      background-color: hsl(0, 0%, 60%);
+      border-radius: 34px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: .4s;
+    }
+
+    .slider::before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      border-radius: 50%;
+      transition: .4s;
+    }
+
+    .switch input:checked + .slider {
+      background-color: hsl(3, 86%, 64%);
+    }
+
+    .switch input:checked + .slider::before {
+      transform: translateX(14px);
+    }
+  </style>
+</head>
+<body>
+
+
+  <div class="header">
+    <img src="./assets/images/svg.svg" alt="Logo" />
+    <h2>Extensions</h2>
+   <div class="img2"><a href="./whiteee.html"><img src="./assets/images/icon-sun.svg" alt=""></a></div>
+  </div>
+
+  <section class="filters">
+    <h2>Extensions List</h2>
+    <div class="filter-buttons">
+      <button class="active">All</button>
+      <button>Active</button>
+      <button>Inactive</button>
+    </div>
+  </section>
+
+  <section class="grid">
+   
+    <div class="card">
+      <div class="card-icon"><img src="assets/images/logo-devlens.svg" alt=""></div>
+      <div class="card-body">
+        <h3>DevLens</h3>
+        <p>Quickly inspect page layouts and visualize element boundaries.</p>
+      </div>
+      <div class="card-actions">
+        <button class="remove">Remove</button>
+        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon"><img src="assets/images/logo-style-spy.svg" alt=""></div>
+      <div class="card-body">
+        <h3>StyleSpy</h3>
+        <p>Instantly analyze and copy CSS from any webpage element.</p>
+      </div>
+      <div class="card-actions">
+        <button class="remove">Remove</button>
+        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon"><img src="assets/images/logo-speed-boost.svg" alt=""></div>
+      <div class="card-body">
+        <h3>SpeedBoost</h3>
+        <p>Optimizes browser resource usage to accelerate page loading.</p>
+      </div>
+      <div class="card-actions">
+        <button class="remove">Remove</button>
+        <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon"><img src="assets/images/logo-json-wizard.svg" alt=""></div>
+      <div class="card-body">
+        <h3>JSONWizard</h3>
+        <p>Formats, validates, and prettifies JSON responses in-browser.</p>
+      </div>
+      <div class="card-actions">
+        <button class="remove">Remove</button>
+        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon"><img src="assets/images/logo-tab-master-pro.svg" alt=""></div>
+      <div class="card-body">
+        <h3>TabMaster Pro</h3>
+        <p>Organizes browser tabs into groups and sessions.</p>
+      </div>
+      <div class="card-actions">
+        <button class="remove">Remove</button>
+        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon"><img src="assets/images/logo-viewport-buddy.svg" alt=""></div>
+      <div class="card-body">
+        <h3>ViewportBuddy</h3>
+        <p>Simulates various screen resolutions directly within the browser.</p>
+      </div>
+      <div class="card-actions">
+        <button class="remove">Remove</button>
+        <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon"><img src="assets/images/logo-markup-notes.svg" alt=""></div>
+      <div class="card-body">
+        <h3>Markup Notes</h3>
+        <p>Enables annotation and notes directly onto webpages for collaborative debugging.</p>
+      </div>
+      <div class="card-actions">
+        <button class="remove">Remove</button>
+        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon"><img src="assets/images/logo-grid-guides.svg" alt=""></div>
+      <div class="card-body">
+        <h3>GridGuides</h3>
+        <p>Overlay customizable grids and alignment guides on any webpage.</p>
+      </div>
+      <div class="card-actions">
+        <button class="remove">Remove</button>
+        <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon"><img src="assets/images/logo-palette-picker.svg" alt=""></div>
+      <div class="card-body">
+        <h3>Palette Picker</h3>
+        <p>Instantly extracts color palettes from any webpage.</p>
+      </div>
+      <div class="card-actions">
+        <button class="remove">Remove</button>
+        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon"><img src="assets/images/logo-link-checker.svg" alt=""></div>
+      <div class="card-body">
+        <h3>LinkChecker</h3>
+        <p>Scans and highlights broken links on any page.</p>
+      </div>
+      <div class="card-actions">
+                   <button class="remove">Remove</button>
+        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon"><img src="assets/images/logo-dom-snapshot.svg" alt=""></div>
+      <div class="card-body">
+        <h3>DOM Snapshot</h3>
+        <p>Capture and export DOM structures quickly.</p>
+      </div>
+      <div class="card-actions">
+        <button class="remove">Remove</button>
+        <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon"><img src="assets/images/logo-console-plus.svg" alt=""></div>
+      <div class="card-body">
+        <h3>ConsolePlus</h3>
+        <p>Enhanced developer console with advanced filtering and logging.</p>
+      </div>
+      <div class="card-actions">
+        <button class="remove">Remove</button>
+        <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
